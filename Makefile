@@ -35,7 +35,7 @@ kubernetes-aws:
 	@bash ./scripts/kubernetes/aws/kubernetes.sh
 
 # MINICONDA
-MINICONDA:
+miniconda:
 	@bash ./scripts/miniconda.sh
 
 # GIT
