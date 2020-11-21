@@ -10,7 +10,7 @@ options=(
     "Quit")
 
 select opt in "${options[@]}"; do
-    case $opt in    
+    case $opt in
         "Miniconda 3, install")
             rm -f /tmp/Miniconda3-latest-Linux-x86_64.sh
             wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -P /tmp
