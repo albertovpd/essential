@@ -23,6 +23,13 @@ select opt in "${options[@]}"; do
             echo 'export PATH=$JAVA_HOME/jre/bin:$PATH' >> $HOME/.bashrc
             sudo update-alternatives --config java
 
+            TMP_DIR=/tmp/spark/local
+            rm -rf $TMP_DIR && mkdir -p $TMP_DIR
+            wget https://www.scala-lang.org/files/archive/scala-2.12.10.deb -P $TMP_DIR
+            sudo dpkg -i $TMP_DIR/scala-2.12.10.deb
+            sudo apt-get install -y --fix-broken
+            scala -version
+
             echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
             curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo apt-key add
             sudo apt-get update
