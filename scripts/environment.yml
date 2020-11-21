@@ -1,0 +1,15 @@
+name: base
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - anaconda-clean
+  - bumpversion
+  - conda-pack
+  - jupyterlab
+  - pip
+  - pylint
+  - spyder
+  - pip:
+    - parquet-tools
+    
